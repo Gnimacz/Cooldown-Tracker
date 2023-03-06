@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Card.gd" type="Script" id=1]
+
+[node name="Card" type="Control"]
+anchor_left = 0.369
+anchor_top = 0.376
+anchor_right = 0.631
+anchor_bottom = 0.624
+margin_left = 0.143982
+margin_top = -0.100006
+margin_right = -0.144043
+margin_bottom = 0.100006
+rect_min_size = Vector2( 268, 149 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}

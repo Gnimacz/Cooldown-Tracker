@@ -1,0 +1,92 @@
+{
+    "Class": "Conjurer",
+    "description": "You can learn to conjure different items. You can conjure turrets out of combat. [Limit: 3 Turrets - can't be doubled by the house passive] Turrets are powered by energy. You have a 25 feet energizing aura. Your turrets act as your team's eyes. In combat they give you vision on all enemies they see.",
+    "Base_AP": 4,
+    "Base_HP": 30,
+    "Base_Armor": 4,
+    "Ability_Layout": [
+        "conjurers_tricks direct_hit line_of_fire",
+        "contained_explosion boost_of_energy",
+        "immediate_agression"
+    ],
+    "Abilities": {
+        "conjurers_tricks": {
+            "Name": "Conjurer's Tricks",
+            "Description": "Conjure out any items your party has [With their permission] as a free-action ability. Use the item without spending any AP.",
+            "Unlocked": true,
+            "Damage": "",
+            "Range": 0,
+            "Cooldown": 3,
+            "Requires": [],
+            "Type": "Active",
+            "Linked_To": []
+        },
+        "direct_hit": {
+            "Name": "Direct Hit",
+            "Description": "All energized turrets shoot a selected enemy within 25 feet for 1d12 damage.",
+            "Unlocked": true,
+            "Damage": "1d12",
+            "Range": 25,
+            "Cooldown": 1,
+            "Requires": [],
+            "Type": "Active",
+            "Linked_To": []
+        },
+        "line_of_fire": {
+            "Name": "Line Of Fire",
+            "Description": "Unleash line beams of 20 feet from all energized turrets in any direction you want. They deal 1d10 damage to all hit enemies. Beams can stack on top of each other.",
+            "Unlocked": false,
+            "Damage": "1d10",
+            "Range": 20,
+            "Cooldown": 2,
+            "Requires": [
+                "direct_hit"
+            ],
+            "Type": "Active",
+            "Linked_To": []
+        },
+        "boost_of_energy": {
+            "Name": "Boost Of Energy",
+            "Description": "Newly created turrets are energized for 2 rounds.",
+            "Unlocked": false,
+            "Damage": "",
+            "Range": 0,
+            "Cooldown": 0,
+            "Requires": [
+                "line_of_fire"
+            ],
+            "Type": "Passive",
+            "Linked_To": [
+                "line_of_fire"
+            ]
+        },
+        "contained_explosion": {
+            "Name": "Contained Explosion",
+            "Description": "All energized turrets explode and deal 1d12 damage in a 20 feet radius. The closer the enemies are to the turrets, the more damage they take. [5 feet closer adds 1d8 of damage]",
+            "Unlocked": false,
+            "Damage": "1d12",
+            "Range": 20,
+            "Cooldown": 3,
+            "Requires": [
+                "direct_hit"
+            ],
+            "Type": "Active",
+            "Linked_To": []
+        },
+        "immediate_agression": {
+            "Name": "Immediate Agression",
+            "Description": "Newly created turrets shoot 1 enemy within 10 feet of them for 1d8.",
+            "Unlocked": false,
+            "Damage": "1d8",
+            "Range": 10,
+            "Cooldown": 0,
+            "Requires": [
+                "contained_explosion"
+            ],
+            "Type": "Passive",
+            "Linked_To": [
+                "contained_explosion"
+            ]
+        }
+    }
+}
