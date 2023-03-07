@@ -34,5 +34,11 @@ func set_ability_values(input, input_value):
 	$"%Type".text = type
 	$"%Description".text = description
 	$"%Cooldown".text = cooldown as String
-	$"%Requires".text = requires as String
+	$"%Requires".hide()
+	$"%Requires".text = ""
+	if((requires as Array).size() > 0):
+		$"%Requires".show()
+		$"%Requires".text = "Requires: "
+		for item in requires:
+			$"%Requires".text += item as String + " "
 	pass
