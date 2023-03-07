@@ -13,6 +13,12 @@ onready var vbox = $"%VBoxContainer"
 var hbox : HBoxContainer
 var hboxes : Array
 
+var chain_texture = load("res://Art/gold_chain.png")
+
+func _ready():
+	
+	pass
+
 func _on_FileDialog_json_Parsed(json):
 	inputJson = json;
 	_try_Decode(json);
@@ -122,6 +128,8 @@ func create_connections():
 			var l := Line2D.new()
 			l.default_color = Color(1,1,1,1)
 			l.width = 10
+			l.texture = chain_texture
+			l.texture_mode = Line2D.LINE_TEXTURE_TILE
 			for point in curve.get_baked_points():
 				l.add_point(point)
 #			for point 
